@@ -1,0 +1,34 @@
+﻿<Page x:Class="ppfInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="770" d:DesignWidth="642">
+
+    <Page.Resources >
+        <FlowDocument x:Key="napoveda" FontFamily="Segoe UI" FontSize="13">
+            <Paragraph Margin="0,5,0,0" FontWeight="Bold" >Cíl programu</Paragraph>
+            <Paragraph Margin="15,5" >Program pomáhá zaznamenat, kdy jste video naposledy viděli. V přehledném seznamu videí si snadno zafiltrujete třeba žánr, a pak které video jste už nějaký ten rok neviděli.</Paragraph>
+            <Paragraph Margin="15,5" >V kontextovém menu vyberete Zhlednuto nyní a datum posledního shlédnutí videa se zapíše jako změna souboru. Program od verze 1.1.5 vytváří databázi, která zrychluje načítání a pomáhá zachovat informaci o posledním shlédnutí videa.</Paragraph>
+            <Paragraph Margin="0,5,0,0" FontWeight="Bold" FontSize="12" >Nastavení programu</Paragraph>
+            <Paragraph Margin="15,5" >V nastavení Složky si nastavíte tématický okruh videí jako např. koncerty a vyberete složky na disku s videi. Pokud má složka podsložky, tak z podsložek vzniknou žánry.</Paragraph>
+            <Paragraph Margin="15,5" >V nastavení Umístění si určíte, kam se bude ukládat nastavení složek.</Paragraph>
+            <Paragraph Margin="0,5,0,0" FontWeight="Bold" FontSize="12" >Export a migrace</Paragraph>
+            <Paragraph Margin="15,5" >V kontextovém menu je možnost exportovat seznam do excelu nebo uložit seznam jako databázi videí bezpečně pod heslem. Databázi úmí program načíst a pracovat s ní.</Paragraph>
+            <Paragraph Margin="15,5" >Před migrací videí na jiné místo na disku nebo jiný disk uložte seznam jako databázi videí. Po migraci nastavte složky pokud se změnily a po načtení filmů z kontextové nabídky vyberte Databáze videí/Zhlédnuto a datumy z databáze se zapíšou na disk k filmům.</Paragraph>
+        </FlowDocument>
+    </Page.Resources >
+
+    <Grid Background="#FFFFFFFA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Height="35" Margin="20,20,20,0" Name="Border1" VerticalAlignment="Top" CornerRadius="15" Background="LightGoldenrodYellow" />
+        <Label Content="Použití programu" Height="35" HorizontalAlignment="Stretch" Margin="30,20,20,20" Name="lblHeader" VerticalAlignment="Top" Width="Auto" FontSize="18" FontWeight="Bold" />
+        <StackPanel Grid.Row="1" Width="640">
+            <FlowDocumentScrollViewer Name="FlowDocViewer" Margin="10,-15,20,0" Document="{DynamicResource napoveda}" />
+        </StackPanel>
+    </Grid>
+</Page>
